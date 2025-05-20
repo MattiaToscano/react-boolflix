@@ -1,8 +1,15 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import ReactCountryFlag from 'react-country-flag'
 import './index.css'
 
 const apiKey = '631f087dc87791077683c9d753605830'
+
+// Mappa delle lingue a codici paese
+const languageToCountryCode = {
+  'en': 'US',
+  'it': 'IT',
+};
 
 function App() {
 
@@ -53,7 +60,17 @@ function App() {
               </div>
               <div className="movie-info">
                 <h3>{movie.title}</h3>
-                <p><strong>Lingua:</strong> {movie.original_language}</p>
+                <p className="language-info">
+                  {languageToCountryCode[movie.original_language] ? (
+                    <ReactCountryFlag
+                      countryCode={languageToCountryCode[movie.original_language]}
+                      svg // Immagine estrapolata da react-country-flag
+                      title={movie.original_language}
+                    />
+                  ) : (
+                    <span className="language-code">{movie.original_language.toUpperCase()}</span>
+                  )}
+                </p>
                 <p><strong>Voto:</strong> {Math.ceil(movie.vote_average / 2)}/5</p>
               </div>
             </div>
