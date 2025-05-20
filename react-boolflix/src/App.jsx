@@ -8,6 +8,11 @@ const apiKey = '631f087dc87791077683c9d753605830'
 const languageToCountryCode = {
   'en': 'US',
   'it': 'IT',
+  'fr': 'FR',
+  'de': 'DE',
+  'es': 'ES',
+  'pt': 'PT',
+  'ja': 'JP',
 };
 
 function App() {
