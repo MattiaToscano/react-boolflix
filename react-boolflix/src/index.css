@@ -29,9 +29,12 @@ body {
 
 .netflix-logo {
   color: #E50914;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 0;
+  margin-right: auto;
+  letter-spacing: -1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
 }
 
 .search-wrapper {
@@ -85,17 +88,17 @@ body {
   gap: 25px;
 }
 
+/* Stile semplice per le card, senza effetti hover */
 .movie-card {
-  border-radius: 6px;
-
+  border-radius: 4px;
   overflow: hidden;
   background-color: #222;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-
 }
 
 .movie-poster {
-  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .movie-poster img {
@@ -118,16 +121,70 @@ body {
 .movie-info {
   padding: 15px;
   background-color: #222;
+  border-top: 3px solid #E50914;
 }
 
 .movie-info h3 {
   margin: 0 0 12px;
-  font-size: 20px;
+  font-size: 18px;
   color: white;
 }
 
 .movie-info p {
   margin: 8px 0;
-  font-size: 16px;
+  font-size: 14px;
   color: #ccc;
+}
+
+/* Stile per i titoli di sezione come Netflix */
+.section-title {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 35px 0 15px 0;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.section-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  height: 80%;
+  width: 4px;
+  background-color: #E50914;
+  border-radius: 2px;
+}
+
+/* Stile per il layout delle sezioni */
+.content-section {
+  margin-bottom: 40px;
+}
+
+/* Badge per tipo di contenuto */
+.content-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #E50914;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Stile per le bandiere */
+.language-info {
+  display: flex;
+  align-items: center;
+}
+
+.language-code {
+  font-size: 0.9rem;
+  color: #aaa;
 }
