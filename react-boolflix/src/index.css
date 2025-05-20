@@ -88,7 +88,7 @@ body {
   gap: 25px;
 }
 
-/* Stile semplice per le card, senza effetti hover */
+
 .movie-card {
   border-radius: 4px;
   overflow: hidden;
