@@ -44,6 +44,19 @@ function App() {
     <div className="netflix-app">
       <header className="netflix-header">
         <h1 className="netflix-logo">BoolFlix</h1>
+
+        <nav className="main-nav">
+          <ul>
+            <li>Home</li>
+            <li>Serie TV</li>
+            <li>Film</li>
+            <li>Giochi</li>
+            <li>Nuovi e popolari</li>
+            <li>La mia lista</li>
+            <li>Sfoglia per lingua</li>
+          </ul>
+        </nav>
+
         <div className="search-wrapper">
           <input
             type="text"
