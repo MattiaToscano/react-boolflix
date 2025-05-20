@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import './index.css'
 
 const apiKey = '631f087dc87791077683c9d753605830'
 
@@ -20,27 +21,46 @@ function App() {
   }
 
   return (
-    <>
-      <header>
-        <h1>BoolFlix</h1>
+    <div className="netflix-app">
+      <header className="netflix-header">
+        <h1 className="netflix-logo">BoolFlix</h1>
+        <div className="search-wrapper">
+          <input
+            type="text"
+            placeholder="Cerca un film"
+            className="search-input"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && handleClick()}
+          />
+          <button className="search-button" onClick={handleClick}>Cerca</button>
+        </div>
       </header>
-      <div className="container">
-        <div className="row">
-          <div className="col-12 col-md-8">
-            <input
-              type="text"
-              placeholder="Cerca un film"
-              className="form-control"
-              value={inputValue}
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-          </div>
-          <div className="col-12 col-md-4">
-            <button className="btn btn-primary" onClick={handleClick}>Cerca</button>
-          </div>
+
+      <div className="content-container">
+        <div className="movies-grid">
+          {movies.map(movie => (
+            <div key={movie.id} className="movie-card">
+              <div className="movie-poster">
+                {movie.poster_path ? (
+                  <img
+                    src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                ) : (
+                  <div className="no-poster">No Image Available</div>
+                )}
+              </div>
+              <div className="movie-info">
+                <h3>{movie.title}</h3>
+                <p><strong>Lingua:</strong> {movie.original_language}</p>
+                <p><strong>Voto:</strong> {Math.ceil(movie.vote_average / 2)}/5</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
