@@ -1,58 +1,55 @@
-* {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
 }
 
-body {
-  background-color: black;
-  color: white;
-  margin: 0;
-
-}
-
+/* Header */
 .netflix-app {
-  background-color: black;
-  color: white;
-  min-height: 100vh;
+  width: 100%;
 }
 
 .netflix-header {
   display: flex;
   align-items: center;
-  padding: 15px 20px;
-  background-color: black;
+  padding: 20px;
+  background-color: #000;
 }
 
 .netflix-logo {
   color: #E50914;
-  font-size: 32px;
+  margin: 0;
+  padding: 0;
   margin-right: 40px;
-  font-weight: bold;
+  font-size: 28px;
 }
 
+/* Menu di navigazione */
 .main-nav {
   flex: 1;
 }
 
 .main-nav ul {
   display: flex;
-  list-style-type: none;
-  padding: 0;
+  list-style: none;
   margin: 0;
+  padding: 0;
   gap: 20px;
 }
 
 .main-nav li {
+  font-size: 14px;
   color: #e5e5e5;
   cursor: pointer;
-  font-size: 14px;
 }
 
 .main-nav li:hover {
-  color: #b3b3b3;
+  color: #fff;
+  text-decoration: underline;
 }
 
+/* Barra di ricerca */
 .search-wrapper {
   display: flex;
   align-items: center;
@@ -64,91 +61,115 @@ body {
   color: white;
   padding: 8px 12px;
   border-radius: 4px 0 0 4px;
-  width: 200px;
+  outline: none;
 }
 
 .search-button {
   background-color: #E50914;
   color: white;
   border: none;
-  padding: 8px 12px;
+  padding: 8px 15px;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   font-weight: bold;
 }
 
-
+/* Contenitore principale */
 .content-container {
-  padding: 20px;
   width: 70%;
   margin: 0 auto;
+  /* This centers the container */
+  padding: 20px 0;
 }
 
 .content-section {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .section-title {
   font-size: 22px;
   margin-bottom: 15px;
+  color: #fff;
 }
 
+/* Griglia dei film */
 .movies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
+/* Card dei film */
 .movie-card {
   position: relative;
-  transition: transform 0.3s;
-  overflow: hidden;
   border-radius: 4px;
+  overflow: hidden;
+  height: 300px;
+  transition: transform 0.3s ease;
 }
 
 .movie-card:hover {
   transform: scale(1.05);
+  z-index: 2;
 }
 
 .movie-poster {
   position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .movie-poster img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-radius: 4px;
 }
 
 .no-poster {
   width: 100%;
-  height: 300px;
+  height: 100%;
   background-color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #aaa;
-  border-radius: 4px;
 }
 
 .content-badge {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(229, 9, 20, 0.8);
   color: white;
   padding: 3px 8px;
   border-radius: 3px;
   font-size: 12px;
 }
 
+/* Informazioni sulla card con effetto hover */
 .movie-info {
-  padding: 10px 0;
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  box-sizing: border-box;
+  transition: bottom 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-card:hover .movie-info {
+  bottom: 0;
 }
 
 .movie-info h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
   font-size: 16px;
-  margin-bottom: 5px;
 }
 
 .language-info {
@@ -165,4 +186,13 @@ body {
 .star-color {
   color: gold;
   margin-right: 3px;
+}
+
+.movie-description {
+  font-size: 12px;
+  margin-top: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  color: #ccc;
 }

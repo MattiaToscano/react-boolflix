@@ -111,6 +111,7 @@ function App() {
                       }
                     })}
                     </p>
+                    {movie.overview && <p className="movie-description">{movie.overview}</p>}
                   </div>
                 </div>
               ))}
@@ -158,6 +159,7 @@ function App() {
                       }
                     })}
                     </p>
+                    {tvShow.overview && <p className="movie-description">{tvShow.overview}</p>}
                   </div>
                 </div>
               ))}
