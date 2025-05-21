@@ -161,3 +161,8 @@ body {
   border-radius: 3px;
   font-size: 12px;
 }
+
+.star-color {
+  color: gold;
+  margin-right: 3px;
+}

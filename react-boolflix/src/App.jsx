@@ -102,7 +102,15 @@ function App() {
                         <span className="language-code">{movie.original_language.toUpperCase()}</span>
                       )}
                     </p>
-                    <p><strong>Voto:</strong> {Math.ceil(movie.vote_average / 2)}/5</p>
+                    <p><strong>Voto:</strong> {[1, 2, 3, 4, 5].map((number) => {
+                      const vote = Math.ceil(movie.vote_average / 2);
+                      if (number <= vote) {
+                        return <span key={number}><i className="fa-solid fa-star star-color"></i></span>;
+                      } else {
+                        return <span key={number}><i className="fa-regular fa-star star-color"></i></span>;
+                      }
+                    })}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -141,7 +149,15 @@ function App() {
                         <span className="language-code">{tvShow.original_language.toUpperCase()}</span>
                       )}
                     </p>
-                    <p><strong>Voto:</strong> {Math.ceil(tvShow.vote_average / 2)}/5</p>
+                    <p><strong>Voto:</strong> {[1, 2, 3, 4, 5].map((number) => {
+                      const vote = Math.ceil(tvShow.vote_average / 2);
+                      if (number <= vote) {
+                        return <span key={number}><i className="fa-solid fa-star star-color"></i></span>;
+                      } else {
+                        return <span key={number}><i className="fa-regular fa-star star-color"></i></span>;
+                      }
+                    })}
+                    </p>
                   </div>
                 </div>
               ))}
